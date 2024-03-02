@@ -36,13 +36,10 @@ export const useTaskStore = defineStore(NAME_SPACE, () => {
 
     if (data instanceof Error) return;
 
-    // Найти индекс существующего элемента
     const index = taskList.value.findIndex((item) => item.id === taskListID);
 
-    // Если элемент найден, обновить его
     if (index !== -1) {
-      // Vue.set(taskList.value, index, data); // Если вы используете Vue 2
-      taskList.value.splice(index, 1, data); // Если вы используете Vue 3
+      taskList.value.splice(index, 1, data);
     }
   };
 
@@ -57,13 +54,10 @@ export const useTaskStore = defineStore(NAME_SPACE, () => {
     const data = await apiEditTitle(taskListID, text);
     if (data instanceof Error) return;
 
-    // Найти индекс существующего элемента
     const index = taskList.value.findIndex((item) => item.id === taskListID);
 
-    // Если элемент найден, обновить его
     if (index !== -1) {
-      // Vue.set(taskList.value, index, data); // Если вы используете Vue 2
-      taskList.value.splice(index, 1, data); // Если вы используете Vue 3
+      taskList.value.splice(index, 1, data);
     }
   };
 
