@@ -98,6 +98,55 @@ class TaskListService {
 
     return JSON.stringify(arr);
   }
+
+  public deleteTaskList(id: number) {
+    if (this.taskListMap.has(id)) {
+      localStorageService().removeItem(String(id));
+      this.taskListMap.delete(id);
+    }
+
+    return this.GetAllTaskList();
+  }
+
+  public editTask(
+    taskListID: number,
+    taskID: number,
+    data: { endTime: string; descriptions: string }
+  ) {
+    const taskList = this.taskListMap.get(taskListID);
+    if (!taskList) return JSON.stringify([]);
+
+    const task = taskList.getTaskByID(taskID);
+    if (!task) return JSON.stringify([]);
+    task.endTime = data.endTime;
+    task.descriptions = data.descriptions;
+
+    localStorageService().setItem<TaskListContainer>(String(taskListID), taskList);
+
+    return this.GetAllTaskList();
+  }
+
+  public taskiSComplete = (taskListID: number, taskID: number, isCompleted: boolean) => {
+    const taskList = this.taskListMap.get(taskListID);
+    if (!taskList) return JSON.stringify([]);
+
+    const task = taskList.getTaskByID(taskID);
+    if (!task) return JSON.stringify([]);
+    task.isComplete = isCompleted;
+
+    localStorageService().setItem<TaskListContainer>(String(taskListID), taskList);
+    return this.GetAllTaskList();
+  };
+
+  public deleteTask = (taskListID: number, taskID: number) => {
+    const taskList = this.taskListMap.get(taskListID);
+    if (!taskList) return JSON.stringify([]);
+
+    taskList.deleteTaskByID(taskID);
+
+    localStorageService().setItem<TaskListContainer>(String(taskListID), taskList);
+    return this.GetAllTaskList();
+  };
 }
 
 function localStorageService() {
@@ -128,10 +177,15 @@ function localStorageService() {
     return items;
   };
 
+  const removeItem = (key: string) => {
+    localStorage.removeItem(key);
+  };
+
   return {
     getAllItems,
     setItem,
-    getItem
+    getItem,
+    removeItem
   };
 }
 

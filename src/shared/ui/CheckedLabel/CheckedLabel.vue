@@ -8,11 +8,9 @@ type PropsType = {
 };
 
 const props = defineProps<PropsType>();
-
-const isChecked = ref<boolean>(props.isChecked);
-
+const isCheked = ref(props.isChecked);
 const emit = defineEmits<{
-  (e: 'emit:checked', flag: boolean): void;
+  (e: 'change', value: boolean): void;
 }>();
 </script>
 
@@ -21,12 +19,11 @@ const emit = defineEmits<{
     <input
       class="label__input"
       type="checkbox"
-      v-model="isChecked"
-      :checked="isChecked"
-      @change="emit('emit:checked', isChecked)"
+      v-model="isCheked"
+      @change="emit('change', isChecked)"
     />
 
-    <CheckedIcon class="label__checkmark" v-if="isChecked"/>
+    <CheckedIcon class="label__checkmark" v-if="isCheked" />
   </label>
 </template>
 

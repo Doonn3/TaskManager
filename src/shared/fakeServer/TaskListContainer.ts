@@ -41,4 +41,12 @@ export class TaskListContainer {
   public setTasks(tasks: Task[]) {
     this.taskArray.setTasks(tasks);
   }
+
+  public getTaskByID(id: number) {
+    return this.taskArray.getTaskByID(id);
+  }
+
+  public deleteTaskByID(id: number) {
+    this.taskArray.deleteTaskByID(id);
+  }
 }

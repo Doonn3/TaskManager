@@ -44,4 +44,8 @@ export class TaskArray {
   public getTaskByID(id: number) {
     return this.taskArray.find((task) => task.id === id) ?? null;
   }
+
+  public deleteTaskByID(id: number) {
+    this.taskArray = this.taskArray.filter((task) => task.id !== id);
+  }
 }
