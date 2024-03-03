@@ -1,3 +1,17 @@
+# ТЗ
+## Разработать простое приложение таск-менеджера с использованием Vue 3, включая работу с vuex или pinia и vue-router.
+
+## Приложение должно иметь главную страницу (на главной странице переход на страницу со списком задач, по желанию можете дать волю своей фантазии).
+## На странице со списком задач должна быть форма создания задачи.
+## Задачи можно удалить и отредактировать. При обновлении страницы должны отображаться сохранённые задачи.
+
+ТЗ выполнено полностью
+
+
+### Я создал простые стили, поскольку в техническом задании не было предложенного шаблона, и поскольку я не являюсь дизайнером. Я решил реализовать это через фейковый сервер, имитируя отправку запроса
+
+### Прошу дать фидбэк
+
 # TaskManager
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -13,8 +27,8 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
 1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
 ## Customize configuration
