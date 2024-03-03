@@ -91,8 +91,6 @@ import { RouterLink } from 'vue-router';
   margin-top: 10px;
   padding: 10px;
 
-  border: 1px solid white;
-
   color: white;
 
   &__user-name {
