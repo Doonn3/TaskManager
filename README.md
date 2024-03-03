@@ -1,3 +1,5 @@
+# Deploy - https://tsimple-task-manager.netlify.app
+
 # ТЗ
 ## Разработать простое приложение таск-менеджера с использованием Vue 3, включая работу с vuex или pinia и vue-router.
 
