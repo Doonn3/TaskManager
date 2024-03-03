@@ -6,7 +6,7 @@ export async function apiGetAllTaskList() {
     const result = (await JSON.parse(fakeServer.GetAllTaskList())) as TaskListType[];
     return result;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return error as Error;
   }
 }

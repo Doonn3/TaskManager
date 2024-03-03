@@ -16,7 +16,6 @@ import type { TaskListType, CreateTaskType } from '../types/TaskListType';
 
 const NAME_SPACE = 'useTaskStore';
 
-
 export const useTaskListStore = defineStore(NAME_SPACE, () => {
   const taskList = ref<TaskListType[]>([]);
 
@@ -41,7 +40,7 @@ export const useTaskListStore = defineStore(NAME_SPACE, () => {
   const getTasksList = async () => {
     const data = await apiGetAllTaskList();
     if (data instanceof Error) return;
-    console.log(data);
+
     taskList.value = data;
   };
 
