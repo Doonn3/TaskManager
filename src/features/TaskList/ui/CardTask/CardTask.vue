@@ -32,16 +32,16 @@ const onChange = () => {
 const onDelete = () => {
   store.deleteTask(props.taskListId, props.id);
 };
+
+const onEdit = () => {
+  emit('emit:edit', { endTime: props.endTime, descriptions: props.descriptions });
+};
 </script>
 
 <template>
   <div class="card-task">
     <div class="card-task__control">
-      <EditButton
-        @emit:click="
-          emit('emit:edit', { endTime: props.endTime, descriptions: props.descriptions })
-        "
-      />
+      <EditButton @emit:click="onEdit" />
       <button class="btn" @click="onDelete">X</button>
     </div>
 

@@ -14,6 +14,7 @@ const swap = () => {
 
 const onClickCreate = () => {
   if (!title.value) return;
+
   emit('emit:create', title.value);
   swap();
 };

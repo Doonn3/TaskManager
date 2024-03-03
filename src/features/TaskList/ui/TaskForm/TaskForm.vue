@@ -20,11 +20,16 @@ const onClickSave = () => {
   if (!model.endTime || !model.descriptions) return;
 
   if (props.isEditable) {
+    console.log('EDIT');
+    console.log(model);
+    console.log(props.taskListId);
+    console.log(props.taskId);
     store.editTask(props.taskListId, props.taskId, {
       endTime: model.endTime,
       descriptions: model.descriptions
     });
   } else {
+    console.log('CREATE');
     store.createTask(props.taskListId, {
       endTime: model.endTime,
       descriptions: model.descriptions,

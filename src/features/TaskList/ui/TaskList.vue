@@ -14,6 +14,7 @@ const emit = defineEmits<{
 }>();
 
 const onEdit = (taskListID: number, taskID: number, time: string, desc: string) => {
+  console.log(taskID);
   model.selectTaskListID = taskListID;
   model.selectTaskID = taskID;
   model.cardEditData.endTime = time;
@@ -43,7 +44,7 @@ const onEdit = (taskListID: number, taskID: number, time: string, desc: string) 
     </template>
 
     <template v-slot:slot-add-button>
-      <TaskCreateButton @emit:add-card="emit('emit:create-card')" />
+      <TaskCreateButton :task-list-id="taskList.id" @emit:add-card="emit('emit:create-card')" />
     </template>
 
     <template v-slot:slot-delete>
