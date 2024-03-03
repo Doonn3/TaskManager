@@ -15,8 +15,7 @@
 
 <style lang="scss" scoped>
 .task-list {
-  // min-width: 320px;
-  // max-width: 1000px;
+  min-width: 320px;
   padding: 5px;
 
   background-color: rgb(71, 71, 71);

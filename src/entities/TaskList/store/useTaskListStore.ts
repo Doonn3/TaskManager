@@ -12,17 +12,12 @@ import {
   apiTaskComplete,
   apiDeleteTask
 } from '../api/api';
-import type { TaskListType } from '../types/TaskListType';
+import type { TaskListType, CreateTaskType } from '../types/TaskListType';
 
 const NAME_SPACE = 'useTaskStore';
 
-export type TaskTypeStore = {
-  endTime: string;
-  descriptions: string;
-  isComplete: boolean;
-};
 
-export const useTaskStore = defineStore(NAME_SPACE, () => {
+export const useTaskListStore = defineStore(NAME_SPACE, () => {
   const taskList = ref<TaskListType[]>([]);
 
   const createTaskList = async (name: string) => {
@@ -31,7 +26,7 @@ export const useTaskStore = defineStore(NAME_SPACE, () => {
     taskList.value.push(result);
   };
 
-  const createTask = async (taskListID: number, task: TaskTypeStore) => {
+  const createTask = async (taskListID: number, task: CreateTaskType) => {
     const data = await apiCreateTaskToTaskList(taskListID, task);
 
     if (data instanceof Error) return;

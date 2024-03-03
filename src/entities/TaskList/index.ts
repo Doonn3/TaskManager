@@ -1,3 +1,4 @@
 import TaskListEnity from './ui/TaskListEnity.vue';
-export { useTaskStore } from './store/useTaskListStore';
+export { useTaskListStore } from './store/useTaskListStore';
+export { useSelectedTaskStore } from './store/useSelectedTaskStore';
 export { TaskListEnity };

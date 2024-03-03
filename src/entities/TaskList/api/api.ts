@@ -1,6 +1,5 @@
 import { fakeServer } from '@/shared/fakeServer/TaskListService';
-import type { TaskTypeStore } from '../store/useTaskStore';
-import type { TaskListType } from '../types/TaskListType';
+import type { CreateTaskType, TaskListType } from '../types/TaskListType';
 
 export async function apiGetAllTaskList() {
   try {
@@ -22,7 +21,7 @@ export async function apiCreateTaskList(name: string) {
   }
 }
 
-export async function apiCreateTaskToTaskList(taskListID: number, task: TaskTypeStore) {
+export async function apiCreateTaskToTaskList(taskListID: number, task: CreateTaskType) {
   try {
     return (await JSON.parse(fakeServer.createTask(taskListID, task))) as TaskListType;
   } catch (error) {

@@ -9,3 +9,9 @@ export type TaskListType = {
     isComplete: boolean;
   }[];
 };
+
+export type CreateTaskType = {
+  endTime: string;
+  descriptions: string;
+  isComplete: boolean;
+};
