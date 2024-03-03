@@ -37,7 +37,6 @@ class TaskListService {
     this.taskListMap.set(currID, taskListContainer);
     localStorageService().setItem<TaskListContainer>(String(currID), taskListContainer);
     this.idCounter += 1;
-    console.log(this.taskListMap, 'NESW');
     return JSON.stringify({
       id: taskListContainer.ID,
       name: taskListContainer.TaskList.name,
@@ -88,7 +87,6 @@ class TaskListService {
 
   public GetAllTaskList() {
     const arr = Array.from(this.taskListMap.values()).map((item) => {
-      console.log(item);
       return {
         id: item.ID,
         name: item.TaskList.name,
