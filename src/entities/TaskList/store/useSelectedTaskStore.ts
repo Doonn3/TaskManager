@@ -6,7 +6,7 @@ const NAME_SPACE = 'useSelectedTaskStore';
 type EditDataType = {
   endTime: string;
   descriptions: string;
-}
+};
 
 export const useSelectedTaskStore = defineStore(NAME_SPACE, () => {
   const selectTaskListID = ref<number>(0);
